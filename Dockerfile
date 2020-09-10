@@ -2,6 +2,8 @@ FROM ruby:2.7.1
 
 ARG RAILS_ROOT=/bot_rails
 
+RUN apt-get update && apt-get install -y vim
+
 RUN mkdir -p $RAILS_ROOT
 WORKDIR $RAILS_ROOT
 

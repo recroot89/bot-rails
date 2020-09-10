@@ -17,6 +17,7 @@ services:
       BUNDLE_PATH: /bundle_cache
       GEM_HOME: /bundle_cache
       GEM_PATH: /bundle_cache
+      EDITOR: vim
   db:
     image: postgres:11.4
     ports:
