@@ -1,0 +1,31 @@
+version: "3.7"
+
+services:
+  app:
+    build: .
+    depends_on:
+      - db
+    volumes:
+      - .:/bot_rails:cached
+      - ~/.bash_history:/root/.bash_history
+      - bundle_cache:/bundle_cache
+    ports:
+      - 3000:3000
+    command: sh -c "rm -f tmp/pids/server.pid && bin/rails s -p 3000 -b 0.0.0.0"
+    env_file: ".env"
+    environment:
+      BUNDLE_PATH: /bundle_cache
+      GEM_HOME: /bundle_cache
+      GEM_PATH: /bundle_cache
+      EDITOR: vim
+  db:
+    image: postgres:11.4
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: app
+      POSTGRES_PASSWORD: password
+
+volumes:
+  bundle_cache:
+
