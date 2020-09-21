@@ -12,7 +12,9 @@ stop_bot:
 
 test_bot:
 	docker-compose run --rm app bash -c "bundle exec rspec"
-	# docker-compose run --rm app bash -c "bin/rails test -d"
+
+lint_bot:
+	docker-compose run --rm app bash -c "bundle exec rubocop"
 
 app-prepare:
 	docker-compose run --rm app bash -c "bundle install"
