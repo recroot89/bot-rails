@@ -11,18 +11,10 @@ Requirements:
 1. Clone the repository, cd to the project's root folder and execute:
 
 ```
-make build_bot
+make compose-setup
 ```
 
-2. Create .env file
-3. Prepare the app:
-
-```
-make app-prepare
-make db-prepare
-```
-
-4. Run:
+2. Run:
 
 ```
 make start_bot

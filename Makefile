@@ -16,11 +16,13 @@ test_bot:
 lint_bot:
 	docker-compose run --rm app bash -c "bundle exec rubocop"
 
-app-prepare:
-	docker-compose run --rm app bash -c "bundle install"
+fix_lint_bot:
+	docker-compose run --rm app bash -c "bundle exec rubocop --auto-correct"
 
-db-prepare:
-	docker-compose run --rm app bash -c "bin/rails db:create db:migrate db:seed"
+compose-setup:
+	make build_bot
+	docker-compose run --rm app bash -c "cp -n .env.example .env || true"
+	docker-compose run --rm app bash -c "bin/setup"
 
 .PHONY: test
 
