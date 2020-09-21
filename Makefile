@@ -11,7 +11,8 @@ stop_bot:
 	docker-compose down
 
 test_bot:
-	docker-compose run --rm app bash -c "bin/rails test -d"
+	docker-compose run --rm app bash -c "bundle exec rspec"
+	# docker-compose run --rm app bash -c "bin/rails test -d"
 
 app-prepare:
 	docker-compose run --rm app bash -c "bundle install"
