@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class TelegramWebhooksController < Telegram::Bot::UpdatesController
   before_action :define_user
 
@@ -11,6 +13,7 @@ class TelegramWebhooksController < Telegram::Bot::UpdatesController
 
   def action_missing(_action, *_args)
     return unless action_type == :command
+
     respond_with :message,
                  text: t('telegram_webhooks.action_missing.command',
                          command: action_options[:command])
@@ -19,5 +22,4 @@ class TelegramWebhooksController < Telegram::Bot::UpdatesController
   def define_user
     UserService.new(payload).create_or_update_user
   end
-
 end

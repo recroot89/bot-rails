@@ -10,6 +10,7 @@ AllCops:
     - 'db/schema.rb'
     - 'db/migrate/**'
     - 'vendor/**/*'
+  NewCops: enable
 
 Style/ClassAndModuleChildren:
   Enabled: false

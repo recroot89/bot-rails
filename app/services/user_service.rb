@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class UserService
   attr_reader :user_params, :chat_id
 
@@ -22,5 +24,4 @@ class UserService
       User.create(user_params.merge(chat_id: chat_id))
     end
   end
-
 end
