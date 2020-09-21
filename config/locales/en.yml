@@ -4,3 +4,5 @@ en:
       command: Can not perform %{command}
     start:
       content: Hello! You can ask me about the weather or where can you watch a movie
+    message:
+      content: 'You wrote: %{text}'

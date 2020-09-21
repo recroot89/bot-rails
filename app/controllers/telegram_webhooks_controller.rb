@@ -20,6 +20,6 @@ class TelegramWebhooksController < Telegram::Bot::UpdatesController
   end
 
   def define_user
-    UserService.new(payload).create_or_update_user
+    UserUpsertService.new.call(payload)
   end
 end
