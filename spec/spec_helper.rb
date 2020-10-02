@@ -15,7 +15,12 @@
 # it.
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
+require File.expand_path('../config/environment', __dir__)
+
 RSpec.configure do |config|
+  Telegram.reset_bots
+  Telegram::Bot::ClientStub.stub_all!
+  config.after { Telegram.bot.reset }
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
   # assertions if you prefer.
