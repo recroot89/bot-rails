@@ -12,8 +12,9 @@ class UserUpsertService
       text: params['text'],
       language: params['from']['language_code']
     }
-    if User.exists?(chat_id: chat_id)
-      User.find_by(chat_id: chat_id).update!(user_params)
+    user = User.find_by(chat_id: chat_id)
+    if user
+      user.update!(user_params)
     else
       User.create!(user_params.merge(chat_id: chat_id))
     end
