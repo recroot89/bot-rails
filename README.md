@@ -52,6 +52,7 @@ make set_webhook
 
 1. `make bash`
 2. `bin/rails credentials:edit --environment development`
+
    2.1. change bot settings for test environment: `bin/rails credentials:edit --environment test`
    example:
 
