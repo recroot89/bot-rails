@@ -1,45 +1,56 @@
 # Bot Rails
 
-## Install
-
 Requirements:
 
 - docker
 - docker-compose
 - ngrok (for Webhook mode)
 
-1. Clone the repository, cd to the project's root folder and execute:
+1. Clone the repository and install the app:
 
 ```
 make compose-setup
 ```
 
-2. Run:
+2. Run the app:
 
 ```
-make start_bot
+make start
+```
+3. Run tests:
+```
+make test
 ```
 
-Admin (ActiveAdmin): `https://localhost:3000/admin`
+Admin (ActiveAdmin): `http://localhost:3000/admin`
 
 <hr>
 ## Webhook mode:
-1. Run ngrok and update default_url_options in development.rb
-`make set_webhook`
+1. Run ngrok and update `default_url_options` in development.rb
+```
+make set_webhook
+```
 
 2. Show Webhook info:
    https://api.telegram.org/bot{BOT_TOKEN}/getWebhookInfo
-   <br>
 
 ## Poller mode:
 
 1. Delete Webhook
    https://api.telegram.org/bot{BOT_TOKEN}/deleteWebhook
-2. Run bash: `make bash_bot`
+2. `make bash`
 3. Run `bin/rake telegram:bot:poller`
 
 <hr>
 ### Change telegram bot token:
-1. `make bash_bot`
+1. `make bash`
 2. `bin/rails credentials:edit --environment development`
+2.1. change bot settings for test environment: `bin/rails credentials:edit --environment test`
+example:
+```
+{
+  telegram:
+    bot: 'test'
+}
+```
 3. enter the new token and save file

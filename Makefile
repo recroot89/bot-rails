@@ -1,22 +1,22 @@
-build_bot:
+build:
 	docker-compose build
 
-bash_bot:
+bash:
 	docker-compose run --rm app bash
 
-start_bot:
+start:
 	docker-compose up
 
-stop_bot:
+stop:
 	docker-compose down
 
-test_bot:
+test:
 	docker-compose run --rm app bash -c "bundle exec rspec"
 
-lint_bot:
+lint:
 	docker-compose run --rm app bash -c "bundle exec rubocop"
 
-fix_lint_bot:
+fix:
 	docker-compose run --rm app bash -c "bundle exec rubocop --auto-correct"
 
 set_webhook:
