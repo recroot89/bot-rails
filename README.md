@@ -17,7 +17,9 @@ make compose-setup
 ```
 make start
 ```
+
 3. Run tests:
+
 ```
 make test
 ```
@@ -25,8 +27,11 @@ make test
 Admin (ActiveAdmin): `http://localhost:3000/admin`
 
 <hr>
+
 ## Webhook mode:
+
 1. Run ngrok and update `default_url_options` in development.rb
+
 ```
 make set_webhook
 ```
@@ -42,15 +47,19 @@ make set_webhook
 3. Run `bin/rake telegram:bot:poller`
 
 <hr>
+
 ### Change telegram bot token:
+
 1. `make bash`
 2. `bin/rails credentials:edit --environment development`
-2.1. change bot settings for test environment: `bin/rails credentials:edit --environment test`
-example:
+   2.1. change bot settings for test environment: `bin/rails credentials:edit --environment test`
+   example:
+
 ```
 {
   telegram:
     bot: 'test'
 }
 ```
+
 3. enter the new token and save file
