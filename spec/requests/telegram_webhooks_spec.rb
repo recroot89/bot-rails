@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'telegram/bot/updates_controller/rspec_helpers'
 
 RSpec.describe TelegramWebhooksController, telegram_bot: :rails do
