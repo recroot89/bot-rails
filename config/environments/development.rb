@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+Rails.application.routes.default_url_options[:host]= 'https://33c5e0d2be89.ngrok.io'
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 

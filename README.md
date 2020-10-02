@@ -24,9 +24,8 @@ Admin (ActiveAdmin): `https://localhost:3000/admin`
 
 <hr>
 ## Webhook mode:
-1. Run ngrok and set Webhook
-https://api.telegram.org/bot{BOT_TOKEN}/setWebhook?url=https://7ba680876ff0.ngrok.io/telegram/{BOT_TOKEN2}
-BOT_TOKEN2 is the same BOT_TOKEN with replaced colon with underline
+1. Run ngrok and update default_url_options in development.rb
+`make set_webhook`
 
 2. Show Webhook info:
    https://api.telegram.org/bot{BOT_TOKEN}/getWebhookInfo

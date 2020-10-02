@@ -19,9 +19,12 @@ lint_bot:
 fix_lint_bot:
 	docker-compose run --rm app bash -c "bundle exec rubocop --auto-correct"
 
+set_webhook:
+	docker-compose run --rm app bash -c "bin/rake telegram:bot:set_webhook RAILS_ENV=development"
+
 compose-setup:
+	cp -n .env.example .env || true
 	make build_bot
-	docker-compose run --rm app bash -c "cp -n .env.example .env || true"
 	docker-compose run --rm app bash -c "bin/setup"
 
 .PHONY: test
