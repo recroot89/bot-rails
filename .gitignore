@@ -22,3 +22,5 @@
 /config/master.key
 /config/credentials/development.key
 .env
+
+/config/credentials/test.key
