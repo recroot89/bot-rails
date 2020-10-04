@@ -24,7 +24,7 @@ set_webhook:
 
 compose-setup:
 	cp -n .env.example .env || true
-	make build_bot
+	make build
 	docker-compose run --rm app bash -c "bin/setup"
 
 .PHONY: test
