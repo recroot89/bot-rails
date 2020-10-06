@@ -1,4 +1,4 @@
-FROM ruby:2.7.1
+FROM ruby:2.7.2
 
 ARG RAILS_ROOT=/bot_rails
 
