@@ -28,6 +28,7 @@ compose-setup:
 	docker-compose run --rm app bash -c "bin/setup"
 
 ci-test:
+	cp -n .env.example .env || true
 	make stop
 	make compose-setup
 	make lint
