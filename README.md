@@ -1,3 +1,5 @@
+[![github action status](https://github.com/recroot89/bot-rails/workflows/On%20Push/badge.svg)](https://actions-badge.atrox.dev/recroot89/bot-rails/goto)
+
 # Bot Rails
 
 Requirements:
@@ -33,7 +35,7 @@ Admin (ActiveAdmin): `http://localhost:3000/admin`
 1. Run ngrok and update `default_url_options` in development.rb
 
 ```
-make set_webhook
+make set-webhook
 ```
 
 2. Show Webhook info:
