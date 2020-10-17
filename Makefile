@@ -11,21 +11,21 @@ stop:
 	docker-compose down
 
 test:
-	docker-compose run --rm app bash -c "bundle exec rspec"
+	docker-compose run --rm app bundle exec rspec
 
 lint:
-	docker-compose run --rm app bash -c "bundle exec rubocop"
+	docker-compose run --rm app bundle exec rubocop
 
 fix:
-	docker-compose run --rm app bash -c "bundle exec rubocop --auto-correct"
+	docker-compose run --rm app bundle exec rubocop --auto-correct
 
 set-webhook:
-	docker-compose run --rm app bash -c "bin/rake telegram:bot:set_webhook RAILS_ENV=development"
+	docker-compose run --rm app bin/rake telegram:bot:set_webhook RAILS_ENV=development
 
 compose-setup:
 	cp -n .env.example .env || true
 	make build
-	docker-compose run --rm app bash -c "bin/setup"
+	docker-compose run --rm app bin/setup
 
 ci-test:
 	cp -n .env.example .env || true
