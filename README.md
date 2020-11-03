@@ -8,22 +8,16 @@ Requirements:
 - docker-compose
 - ngrok (for Webhook mode)
 
-1. Clone the repository and install the app:
+### Setup
 
-```
-make compose-setup
-```
-
-2. Run the app:
-
-```
-make start
-```
-
-3. Run tests:
-
-```
-make test
+```sh
+$ git clone git@github.com:recroot89/bot-rails.git
+$ cd bot-rails
+$ make compose-setup
+# start the app
+$ make start
+# run tests
+$ make test
 ```
 
 Admin (ActiveAdmin): `http://localhost:3000/admin`
@@ -55,14 +49,11 @@ make set-webhook
 1. `make bash`
 2. `bin/rails credentials:edit --environment development`
 
-   2.1. change bot settings for test environment: `bin/rails credentials:edit --environment test`
-   example:
+Example for test environment:
 
 ```
 {
   telegram:
-    bot: 'test'
+    bot: test
 }
 ```
-
-3. enter the new token and save file
