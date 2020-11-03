@@ -32,6 +32,11 @@ rescue ActiveRecord::PendingMigrationError => e
   puts e.to_s.strip
   exit 1
 end
+
+Telegram.bots_config = {
+  default: 'test'
+}
+
 RSpec.configure do |config|
   config.after { Telegram.bot.reset }
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
